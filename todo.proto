@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+service TodoService {
+    rpc CreateTodo (Todo) returns (Todo) {}
+    rpc GetTodo (TodoRequest) returns (Todo) {}
+    rpc ListTodo (Empty) returns (TodoList) {}
+}
+
+message Todo {
+    string id = 1;
+    string title = 2;
+    optional string content = 3;
+}
+
+message TodoList {
+    repeated Todo todos = 1;
+}
+
+// /todos/:id in terms of REStApi call
+message TodoRequest {
+    string id = 1;
+}
+
+
+
