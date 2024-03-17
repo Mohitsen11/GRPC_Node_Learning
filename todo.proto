@@ -6,6 +6,8 @@ service TodoService {
     rpc ListTodo (Empty) returns (TodoList) {}
 }
 
+message Empty {}
+
 message Todo {
     string id = 1;
     string title = 2;
